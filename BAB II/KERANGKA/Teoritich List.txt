@@ -1,0 +1,85 @@
+Riset Base:
+* Sistem kendali
+	* Sejarah Sistem Kendali
+	* Devenisi Sistem Kendali
+* sistem otomasi / automations System
+	* Sejarah 
+	* Devenisi
+	
+* Teknologi sistem keamanan 
+		* Devenisi Tekhnologi 
+		* Devenisi keamanan
+		* Devenisi Tekhnologi Sistem kemanan
+
+* jaringan komunikasi komputer
+	* sejarah komunikasi
+	* Devenisi komunikasi
+	* Sejarah komputer
+	* Devenisi komputer
+	* sejarah jaringan
+	* Devenisi jaringan
+	* Klarifikasi Jaringan
+	* Topologi Jaringan
+	* client-server dalam jaringan 
+
+* Pemograman WEB
+	* Sejarah WEB
+	* Devenisi WEB
+	* Klarifkasi WEB
+	* Devenisi bahasa Pemograman
+	* Klarifikasi Bahasa pemograman WEB
+		* HTML Langguage
+		* PHP Languege
+		* Java Script
+		* Framework	
+			* Devenisi
+			* macam-macam Framework
+				* Java Script Framework
+				* PHP Framework 
+	* Database
+		* Devenisi
+		* Klarifikasi database
+			* Mysql database
+			* mariaDB
+			* SQL Server
+			* PostgreSQL
+
+		
+	* Domain
+		* Sejarah domain
+		* devenisi domain
+	* SSL
+		* Sejarah SSL
+		* SSL devenitions
+
+	* Web-server
+			* Sejarah Server
+			* Devenisi Server
+			* devenisi web server
+		
+	* Hosting	
+		* Sejarah hosting
+		* devenisi hosting
+* sistem pendeteksi bencanan
+	* Devenisi sensor
+	* macam-macam/jenis-jenis sensor
+		*	Sensor getaran
+		* 	Sensor kebakaran
+		* dll
+	
+* Mikrokontroller
+	* Devenisi mikrokontroller
+	* klarifikasi/jenis-jenis mikrokontroller
+		* 2.	Arduino
+* Arduino Modul
+	* devenisi Arduino Modul
+	* macam-macam Arduino modul
+		* 3.	RFID Shield
+		* 6.	Load shell Lock Door Magnetic
+*  Mootor Modul
+	* devenisi motor 
+	* macam-macam motor
+		* Motor Servo
+		* Motor Steeper
+
+	

@@ -1,0 +1,29 @@
+Tools and Device List:
+-----	-------------------			-----------		-----------		-----------	-----------
+GROUP	Name Device/tools			Price . Rp.		Status V/x		  Sumry V	 Sumry  X
+-----	-------------------			-----------		-----------		-----------	-----------
+Network------------
+	1.AP Router TENDA 300 			Rp. 180.000		     X
+	2.Modem Boltz				Rp. 200.000		     X
+	3.Smartfreen Unlimited SIM_CARD 	Rp.  75.000		     X
+	4. STP/UTP-STRIGHT	CABLE	1-10m	Rp.  15.000		     V			   15.000
+	5.RG-45 Connector			Rp.   2.000		     X
+Microkontroller------------
+	6.Arduino Uno R3			Rp. 150.000		     V  		  150.000
+	7.Motor Servo				Rp.  50.000		     X
+	8.Male and Female Cable			Rp.  30.000		     X
+	9.Singgle Cable				Rp.  10.000		     X
+	10. 12 Volt Adaptor			Rp.  30.000		     X
+	11. RFID Shield				Rp. 170.000		     V			  170.000
+	12. RFID CARD			4	Rp.   8.000		     V			    8.000
+	13. Ethernet Shield			Rp. 135.000		     V			  135.000
+	14. Selenoid Lock Door M 		Rp.  75.000		     V			   75.000
+WEB------------
+	15. Domain+Hosting Service		Rp. 499.000		     V			  499.000
+	16. SSL Certificate			Rp. 0			     
+Prototype------------------
+	17. Miniatur Meeting Room		Rp.  
+	18. Miniatur Gateway Room		Rp.
+
+-------------------------------------------------------------------------------------------------------------------------------
+Total						Rp. 	
