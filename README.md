@@ -4,5 +4,7 @@
 
 * Jurnal-jurnal pada BAB II sudah dilampirkan di dalam folder BAB II
 
+* BAB III baru sampai tahap *Rancangan Diagram blok*
+
 Note:
    - Setiap kali commit perubahan dalam item, pastikan jangan menggunakan "branch master"
