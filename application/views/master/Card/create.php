@@ -16,7 +16,8 @@
 				<div class="form-group ">
 					<label>Tipe</label>
 					<select class="form-control" name="type" id="level">
-						<option>KEY</option>
+						<option>SUPERKEY</option>
+						<option>KARTU</option>
 					</select>
 					<span class="error type text-red"></span>
 				</div>

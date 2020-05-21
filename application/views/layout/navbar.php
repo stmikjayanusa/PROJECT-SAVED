@@ -1,7 +1,7 @@
 <?php $urls = $this->uri->segment(1) ?>
 <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
 	<ul class="nav navbar-nav">
-		<li class="<?= $urls == "welcome" ? "active" : null ?>"><a href="<?= site_url('welcome') ?>"><i class="icon-home4"></i> Home</a></li>
+		<li class="<?= $urls == "Home" ? "active" : null ?>"><a href="<?= site_url('Home') ?>"><i class="icon-home4"></i> Home</a></li>
 		<?php //if ($urls == null) {
 		?>
 		<li class="dropdown <?= $urls == "List_Card" || $urls == "List_Guest"  ? "active" : null ?>">
