@@ -1,0 +1,44 @@
+#include <LiquidCrystal.h>
+
+
+const int rs = 31, en = 32, d4 = 33, d5 =34, d6 = 35, d7 = 36;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
+void setup() {
+  // put your setup code here, to run once:
+lcd.begin(16, 2);
+lcd.print("Hello");
+}
+
+
+int a=0;
+void loop() {
+servoOpen(10);
+lcd.print("Selesai");
+delay(1000);
+servoClose(5);
+lcd.print("Selesai");
+delay(1000);
+}
+
+void servoOpen(int var){
+  
+  while(a<var){
+  a+=1;
+//  motorServo.write(a);
+   lcd.print(a);
+  delay(100);
+  lcd.clear();
+  }
+}
+void servoClose(int var){
+  
+  while(a>var){
+  a-=1;
+//  motorServo.write(a);
+   lcd.print(a);
+  delay(100);
+  lcd.clear();
+  }
+  
+  }
