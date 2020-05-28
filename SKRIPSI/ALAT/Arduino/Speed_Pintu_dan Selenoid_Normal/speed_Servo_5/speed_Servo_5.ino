@@ -22,41 +22,49 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);
 //motor---------------------
 #include <Servo.h>
 Servo motorServo; 
+int selenoid=20;
 String idcard="";
 void setup() {
     Serial.begin(9600);   // Initialize serial communications with the PC
     SPI.begin();
     Serial.print("Mendeteksi Kode Seril Kartu: . . .");    
     motorServo.attach(21);
-    pinMode(20, OUTPUT);
+    pinMode(selenoid, OUTPUT);
     
 
 }
 
 
-
-void loop() {
+//buka tutup aman
+void buka_tutup_aman() {
 //  PANGGIL_ESEKUSI_RFID_();
-  pintu_bergerak();
+    kondisikey(true);
+    cetak("Buka aman","");
+    delay(10000);
+    kondisikey(false);
+    cetak("Tutup agak lama","");
+    delay(20000);
 }
 
+void kondisikey(boolean state){
+      if(state==true){
+            servoOpen(180,8);
+            delay(5000);
+            servoClose(23,3);
+      }else{
+        servoClose(23,3);
+      }
+ }
 int a=0;
-void pintu_bergerak(){
-    digitalWrite(20, HIGH);
-    delay(1000);
-    servoOpen(180,8);
-    delay(1000);
-    servoClose(23,3);
-    delay(1000);
-    digitalWrite(20, LOW);
-    delay(3000);
-  }
 void servoOpen(int var, int spd){ 
+  digitalWrite(selenoid, LOW); cetak("Buka","");
+  delay(500);
   while(a<var){
   a+=1;
   motorServo.write(a);
   delay(spd);
   }
+  delay(2000);
 }
 void servoClose(int var, int spd){
   while(a>var){
@@ -64,7 +72,12 @@ void servoClose(int var, int spd){
   motorServo.write(a);  
   delay(spd);
   }
+  delay(2000);
+  digitalWrite(selenoid, HIGH); cetak("Tutup","");
+  delay(5000);
  }
+//end buka tutup aman
+
 
  void PANGGIL_ESEKUSI_RFID_(){
         if ( ! mfrc522.PICC_IsNewCardPresent()) 

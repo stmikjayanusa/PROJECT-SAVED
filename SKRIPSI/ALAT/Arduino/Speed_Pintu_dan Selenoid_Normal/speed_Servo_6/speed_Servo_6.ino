@@ -13,60 +13,39 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);
 // *             Reader/PCD   Mega          That Pin
 // * Signal      Pin          Pin           used
 // * ------------------------------------
-// * RST/Reset   RST            5            RED/MERAH
-// * SPI SS      SDA(SS)        53           GREY/ABU-ABU
+// * RST/Reset   RST            5            abu-abu
+// * SPI SS      SDA(SS)        53           Kuning
 // * SPI MOSI    MOSI           51           BLUE/BIRU
-// * SPI MISO    MISO           50           HIJAU
-// * SPI SCK     SCK            52           UNGU
+// * SPI MISO    MISO           50           ungu
+// * SPI SCK     SCK            52           Hijau
 
 //motor---------------------
 #include <Servo.h>
 Servo motorServo; 
+int selenoid=20;
 String idcard="";
+int merah=19;
+int hijau=18;
 void setup() {
     Serial.begin(9600);   // Initialize serial communications with the PC
     SPI.begin();
     Serial.print("Mendeteksi Kode Seril Kartu: . . .");    
     motorServo.attach(21);
-    pinMode(20, OUTPUT);
+    pinMode(selenoid, OUTPUT);
+    pinMode(merah, OUTPUT);
+    pinMode(hijau, OUTPUT);
     
 
 }
 
 
+//buka tutup aman
 
-void loop() {
-//  PANGGIL_ESEKUSI_RFID_();
-  pintu_bergerak();
-}
-
-int a=0;
-void pintu_bergerak(){
-    digitalWrite(20, HIGH);
-    delay(1000);
-    servoOpen(180,8);
-    delay(1000);
-    servoClose(23,3);
-    delay(1000);
-    digitalWrite(20, LOW);
-    delay(3000);
+ 
+void loop(){
+  PANGGIL_ESEKUSI_RFID_();
   }
-void servoOpen(int var, int spd){ 
-  while(a<var){
-  a+=1;
-  motorServo.write(a);
-  delay(spd);
-  }
-}
-void servoClose(int var, int spd){
-  while(a>var){
-  a-=1;
-  motorServo.write(a);  
-  delay(spd);
-  }
- }
-
- void PANGGIL_ESEKUSI_RFID_(){
+  void PANGGIL_ESEKUSI_RFID_(){
         if ( ! mfrc522.PICC_IsNewCardPresent()) 
         {
           return;
@@ -95,8 +74,47 @@ void servoClose(int var, int spd){
         idcard=content;
         Serial.print(idcard);
 //        ESEKUSI_ID();
-        
+      
 }
+void ESEKUSI_ID(){
+   if(idcard=="39F4AE83"){
+        
+        cetak("Buka aman","");
+        digitalWrite(merah, LOW);
+       digitalWrite(hijau, HIGH);
+       kondisikey(true);
+       delay(2000);
+    }else{
+            kondisikey(false);
+            
+             digitalWrite(merah, HIGH);
+             digitalWrite(hijau, LOW);
+             cetak("Tutup agak lama","");
+             delay(2000);
+      }
+  }
+  
+void buka_tutup_aman() {
+//  PANGGIL_ESEKUSI_RFID_();
+    kondisikey(true);
+    cetak("Buka aman","");
+    delay(10000);
+    kondisikey(false);
+    cetak("Tutup agak lama","");
+    delay(20000);
+}
+
+void kondisikey(boolean state){
+      if(state==true){
+            servoOpen(180,8);
+            delay(5000);
+            servoClose(23,3);
+      }else{
+        servoClose(23,3);
+      }
+ }
+\
+
 void cetak(String l1,String l2){
 //   lcd.clear();
 //   lcd.setCursor(0,0);
