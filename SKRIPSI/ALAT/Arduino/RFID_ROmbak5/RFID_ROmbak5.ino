@@ -35,30 +35,35 @@ int buzzer=16;
 void setup() {
   Serial.begin(9600);
   Serial.print("Mendeteksi Kode Seril Kartu: . . .");
+  kodeSeri="";
   RFID_Setup();
   //motor declrt..................
       motorServo.attach(21);
-      
-//  end declarate\\
-//    indikator
+     
+      //  end declarate\\
+      //    indikator
     pinMode(selenoid, OUTPUT);
     pinMode(merah, OUTPUT);
     pinMode(hijau, OUTPUT);
     pinMode(buzzer,OUTPUT);
 //end    indikator
+  servo(180,5);cetak("Tutup AWAL","");
+  delay(100);
+    servo(0,5);cetak("Tutup AWAL 2","");
+
 }
 
 void loop(){
+  servo(0,10);cetak("Tutup-----","");
   digitalWrite(hijau, LOW);
-  RFID_loop();
-   motorServo.write(23);
-//   digitalWrite(selenoid, HIGH); cetak("Tutup","");
-
+  //TutupPintu
+    RFID_loop();
   }
 
 //RFID_Mantap............................................................................
 void RFID_loop() {
       // cek kartu RFID baru
+      kodeSeri="";
       if ( ! rfid.PICC_IsNewCardPresent())
         return;
       // kalo sudah pernah terbaca …
@@ -120,50 +125,46 @@ void not_true(){
 void ESEKUSI_ID(){
 
    if(kodeSeri=="39f4ae83"){
-        
         cetak("Buka aman","");
         not_true();
        kondisikey(true);
-       delay(2000);
+       delay(2000);       
+
     }else{
-            kondisikey(false);
+        kondisikey(false);
             not_false();
              cetak("Tutup agak lama","");
              delay(2000);
+             
+      
       }
   }
 
   void kondisikey(boolean state){
       if(state==true){
-            servoOpen(180,8);
+        digitalWrite(selenoid, LOW); cetak("Buka","");
+             //Buka Pintu
+            servo(180,10);
             delay(5000);
-            servoClose(23,3);
+             //TutupPintu
+             servo(0,10);
       }else{
-        servoClose(23,3);
+        digitalWrite(selenoid, HIGH); cetak("TUTUP","");
+        servo(0,10);
       }
  }
 
- int a=0;
-void servoOpen(int var, int spd){ 
-  digitalWrite(selenoid, LOW); cetak("Buka","");
-  delay(500);
-  while(a<var){
-  a+=1;
-  motorServo.write(a);
-  delay(spd);
-  }
-  delay(500);
+void servo(int var, int spd){ 
+    double a=-1;
+    digitalWrite(selenoid, LOW); //cetak("Buka","");
+    delay(500);
+    while(a<var){
+    a+=1;
+    motorServo.write(a);
+    delay(spd);
+    }
+    delay(500);
 }
-void servoClose(int var, int spd){
-  while(a>var){
-  a-=1;
-  motorServo.write(a);  
-  delay(spd);
-  }
-  delay(2000);
-  digitalWrite(selenoid, HIGH); cetak("Tutup","");
-  delay(500);
- }
 //end buka tutup aman
 
 

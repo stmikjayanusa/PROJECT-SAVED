@@ -52,7 +52,7 @@ void loop(){
   digitalWrite(hijau, LOW);
   RFID_loop();
    motorServo.write(23);
-//   digitalWrite(selenoid, HIGH); cetak("Tutup","");
+
 
   }
 
@@ -119,17 +119,17 @@ void not_true(){
 //eseksuis perintah.......................................
 void ESEKUSI_ID(){
 
-   if(kodeSeri=="39f4ae83"){
-        
-        cetak("Buka aman","");
-        not_true();
-       kondisikey(true);
-       delay(2000);
-    }else{
+   if(!kodeSeri=="39f4ae83"){
             kondisikey(false);
             not_false();
              cetak("Tutup agak lama","");
              delay(2000);
+
+    }else{
+        cetak("Buka aman","");
+        not_true();
+       kondisikey(true);
+       delay(2000);       
       }
   }
 
