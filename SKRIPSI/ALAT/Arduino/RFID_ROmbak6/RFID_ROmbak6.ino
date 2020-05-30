@@ -26,11 +26,14 @@ byte nuidPICC[4];
 Servo motorServo; 
 int selenoid=20;
  String kodeSeri="";
+
+//end motor ..............................................
+ ///Notif
 int merah=19;
 int hijau=17;
 int kuning=18;
 int buzzer=16;
-//end motor ..............................................
+//emd notfi.................................................
 
 void setup() {
   Serial.begin(9600);
