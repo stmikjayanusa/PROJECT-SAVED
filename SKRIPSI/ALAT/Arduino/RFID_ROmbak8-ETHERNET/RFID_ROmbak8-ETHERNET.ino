@@ -1,4 +1,5 @@
 
+
 //------ETHERNET-Shield Component
 #include <SPI.h>
 #include <Ethernet.h>
@@ -88,7 +89,7 @@ long measurement =TP_init();
 // Cetak dan proses Kalibrasi gempa ;
   Serial.println(measurement);
   if (measurement > 1000){
-    delay(3000); 
+    delay(1000); 
       long measurement =TP_init();
       Serial.println(measurement);
       if (measurement > 1000){
@@ -99,11 +100,11 @@ long measurement =TP_init();
                digitalWrite(buzzer, HIGH); 
                digitalWrite(merah, HIGH); 
                digitalWrite(kuning, LOW);
-               delay(50);
+               delay(100);
                digitalWrite(buzzer, LOW); 
                digitalWrite(merah, LOW); 
                digitalWrite(kuning, HIGH);
-               
+               delay(100);
                }
       }
       
